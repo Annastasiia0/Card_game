@@ -19,15 +19,15 @@ module.exports = {
         allowNull: false,
       },
       damage: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       health: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       manaCost: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
       },
       ability_id: {
         type: Sequelize.TEXT,
@@ -35,6 +35,14 @@ module.exports = {
         //   model: 'Abilities',
         //   key: 'id',
         // },
+      },
+      pack_id: {
+        type: Sequelize.INTEGER,
+        allowNull:true,
+        references:{
+          model:'Packs',
+          key:'id'
+        },
       },
       createdAt: {
         allowNull: false,

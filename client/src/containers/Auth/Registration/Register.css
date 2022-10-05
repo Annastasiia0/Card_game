@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oi&family=Orelega+One&family=Rubik+Bubbles&display=swap');
+
+.register-container{
+    background-image: url(../Registration/img/registerPage.jpg) !important;
+    background: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    background-attachment: fixed;
+
+}
+
+.login-btn {
+  font-family: Hack, monospace;
+  background: #c5f445;
+  color: #1d1d1d;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 1rem;
+  border: 0;
+  transition: all 0.5s;
+  border-radius: 10px;
+  width: auto;
+  position: relative;
+  min-width: 200px;
+  font-family: 'Rubik Bubbles', cursive;
+}
+
+.login-btn::after {
+  content: "\21F0";
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  position: absolute;
+  left: 80%;
+  top: 54%;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+.login-btn:hover {
+  background: #2b2bff;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #0000ff61;
+  padding: 1rem 3rem 1rem 1.5rem;
+  color: #ffffff;
+}
+
+.login-btn:hover::after {
+  opacity: 1;
+  transition: all 0.5s;
+  color: #ffffff;
+}
+
+
+.logout-btn {
+  font-family: Hack, monospace;
+  background: #d3d3d3;
+  color: #2c2c2c;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 1rem;
+  border: 0;
+  transition: all 0.5s;
+  border-radius: 10px;
+  width: auto;
+  position: relative;
+  min-width: 150px;
+}
+.logout-btn::after {
+  content: "\21F0";
+  font-family: 'Rubik Bubbles', cursive;
+  font-weight: 400;
+  position: absolute;
+  left: 80%;
+  top: 54%;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+.logout-btn:hover {
+  background: #2b2bff;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #0000ff61;
+  padding: 1rem 3rem 1rem 1.5rem;
+  color: #ffffff;
+}
+.logout-btn:hover::after {
+  opacity: 1;
+  transition: all 0.5s;
+  color: #ffffff;
+}
+
+input {
+-webkit-appearance: none;
+   -moz-appearance: none;
+        appearance: none;
+border-radius: 0;
+}
+
+.card {
+  flex-direction: column;
+  background: inherit;
+  /* background-color: black; */
+  border-radius: 10px;
+  margin-top: 50px;
+  height: 480px;
+  width: 600px;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  /* border: 3px solid red; */
+  position: absolute;
+  box-shadow: 14px 30px 23px rgba(0, 0, 0, 0.48);
+}
+
+.card::before{
+  position: absolute;
+  content: '';
+  background: inherit;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; 
+  box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192); 
+  filter: blur(10px);
+  border-radius: 10px;
+}
+
+/* .card-image {
+border-radius: 8px;
+overflow: hidden;
+padding-bottom: 65%;
+background-image: url("https://assets.codepen.io/285131/coffee_1.jpg");
+background-repeat: no-repeat;
+background-size: 150%;
+background-position: 0 5%;
+position: relative;
+} */
+
+.card-heading {
+position: relative;
+display: flex;
+justify-content: center;
+font-size: 45px;
+font-weight: 700;
+color: rgba(65, 61, 234, 1);
+line-height: 1.222;
+font-family:'Orelega One', cursive;
+;
+}
+.card-heading small {
+display: block;
+font-size: 0.75em;
+font-weight: 400;
+margin-top: 0.25em;
+
+}
+
+.card-form {
+padding: 2rem 1rem 0;
+}
+
+.input {
+display: flex;
+flex-direction: column-reverse;
+position: relative;
+padding-top: 1.5rem;
+}
+
+.input + .input {
+margin-top: 1.5rem;
+}
+
+.input-label {
+color: #ffffff;
+position: absolute;
+top: 1.5rem;
+transition: 0.25s ease;
+font-family: 'Orelega One', cursive;
+font-size: 15px;
+}
+
+.input-field {
+border: 0;
+z-index: 1;
+background-color: transparent;
+border-bottom: 2px solid #eee;
+font: inherit;
+font-size: 1.125rem;
+padding: 0.25rem 0;
+}
+
+.input-field:focus, .input-field:valid {
+outline: 0;
+border-bottom-color: rgb(28, 26, 122) !important;
+}
+
+.input-field:focus + .input-label, .input-field:valid + .input-label {
+color: rgb(28, 26, 122)!important;
+transform: translateY(-1.5rem);
+}
+
+.action {
+margin-top: 2rem;
+display: flex;
+justify-content: center;
+}
+
+.action-button {
+  padding: 30px;
+  margin-bottom: 30px;
+  background-color: rgba(65, 61, 234, 1);
+  border-radius: 20px;
+  box-shadow: 9px 13px 3px rgba(0, 0, 0, 0.25);
+  width: 220px;
+  height: 60px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  transition: transform 0.15s;
+  transform-style: preserve-3d;
+}
+.action-button::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.action-button:hover {
+  background: rgb(41, 38, 185);
+  transform: translate(0, 0.25em);
+}
+.action-button:hover::before {
+  /* box-shadow: 0 0 0 2px rgb(28, 26, 122), 0 0.5em 0 0 rgb(28, 26, 122) ; */
+  transform: translate3d(0, 0.5em, -1em);
+}
+.action-button:active {
+  background: rgb(28, 26, 122);
+  transform: translate(0em, 0.75em);
+}
+
