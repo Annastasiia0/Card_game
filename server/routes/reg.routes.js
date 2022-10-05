@@ -29,4 +29,24 @@ regRouter.post('/', async (req, res) => {
   }
 });
 
+regRouter.get('/session', async (req, res) => {
+  if (req.session.userId) {
+    const existingUser = await User.findOne({ where: { id: req.session.userId } });
+    if (existingUser) {
+      const user = {
+        id: existingUser.id,
+        name: existingUser.name,
+        email: existingUser.email,
+        photo: existingUser.photo,
+        coins: existingUser.coins,
+      };
+      res.json(user);
+    } else {
+      res.json({ message: 'Сессия не найдена' });
+    }
+  } else {
+    res.json({});
+  }
+});
+
 module.exports = regRouter;

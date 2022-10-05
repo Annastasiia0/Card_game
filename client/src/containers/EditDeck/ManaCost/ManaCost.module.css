@@ -1,0 +1,23 @@
+.class1 {
+    border: solid 3px gold;
+}
+
+.numbers{
+    display: flex;
+    background-color: rgb(172, 202, 202);
+    border-radius: 0px 110px 1px 59px;
+    width: 100px;
+    height: 145px;
+    top: -27px;
+    margin-top: 45px;
+    box-shadow: 3px 1px 76px 35px rgb(34 60 80 / 33%);
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+.numbers > div {
+    margin-left: 10px;
+    text-shadow:  0 0 10px rgb(18, 62, 175),
+    0 0 27px #000000; 
+}

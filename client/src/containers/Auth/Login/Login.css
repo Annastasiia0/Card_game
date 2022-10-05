@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&family=Neucha&family=Orelega+One&display=swap');
+
+.login-container {
+    background-image: url(../Login/img/loginPage.jpg) !important;
+    background: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    background-attachment: fixed;
+}
+
+.action-button {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: rgba(65, 61, 234, 1);
+    border-radius: 20px;
+    box-shadow: 9px 13px 3px rgba(0, 0, 0, 0.25);
+    width: 325px;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: transform 0.15s;
+    transform-style: preserve-3d;
+    font-family: 'Gabriela', serif;
+  }
+  .action-button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .action-button:hover {
+    background: rgb(41, 38, 185) !important;
+    transform: translate(0, 0.25em);
+  }
+  .action-button:hover::before {
+    /* box-shadow: 0 0 0 2px rgb(28, 26, 122), 0 0.5em 0 0 rgb(28, 26, 122) ; */
+    transform: translate3d(0, 0.5em, -1em);
+  }
+  .action-button:active {
+    background: rgb(28, 26, 122) !important;
+    transform: translate(0em, 0.75em);
+  }

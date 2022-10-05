@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+
+.list__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: white;
+    font-family: 'Neucha', cursive;
+
+}
+
+.editDeck_Container {
+    background-image: url('../EditDeck/img/editDeckPage.jpg') !important;
+    background: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    border: solid;
+    min-height: 100%;
+    z-index: 1 !important;
+}
+
+.cards_container {
+    padding-top: 93px;
+    flex-direction: column;
+}
+
+/* li{
+    margin-bottom: 2px;
+    width: 96px;
+    height: 99px;
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */

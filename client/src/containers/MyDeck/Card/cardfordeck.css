@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&family=Neucha&family=Orelega+One&display=swap');
+
+.cards-container {
+    display: flex;
+    height: 400px;
+    width: 300px;
+    /* border: solid; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #c3c6c5;
+    border-radius: 90px 90px 10px 10px;
+    -webkit-box-shadow: 3px 4px 60px 31px rgba(34, 60, 80, 0.29);
+    -moz-box-shadow: 3px 4px 60px 31px rgba(34, 60, 80, 0.29);
+    box-shadow: 3px 4px 60px 31px rgba(34, 60, 80, 0.85);
+    cursor: pointer;
+    transition: transform 0.70s !important;
+}
+
+.cards-container:hover {
+    display: flex;
+    height: 400px;
+    width: 300px;
+    /* border: solid; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #c3c6c5;
+    border-radius: 90px 90px 10px 10px;
+    -webkit-box-shadow: 3px 4px 60px 31px rgba(34, 60, 80, 0.29);
+    -moz-box-shadow: 3px 4px 60px 31px rgba(34, 60, 80, 0.29);
+    box-shadow: 3px 4px 60px 31px rgba(34, 60, 80, 0.85);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+
+.footer-card {
+    width: 200px;
+    /* border: solid; */
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+
+}
+
+.img-card{
+    background-image: url(./img/card.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border: solid; */
+    width: 300px;
+    height: 230px;
+    background-position: center;
+    border-radius: 90px;
+    /* box-shadow: 3px 4px 60px 31px rgba(34, 60, 80, 0.85); */
+}
+
+.text-card{
+    color: white;
+    text-shadow:  0 0 10px rgb(18, 62, 175),
+    0 0 27px #000000; 
+}
+
+.btn-container{
+    /* border: solid; */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.btn-add-card{
+    height: 30px;
+    width: 90px;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(65, 61, 234, 1) !important;
+    box-shadow: 9px 13px 3px rgba(0, 0, 0, 0.25) !important;
+    color: white !important;
+    transition: transform 0.15s !important;
+    transform-style: preserve-3d !important;
+    font-family: 'Neucha', cursive;
+
+}
+
+.btn-add-card ::before {
+	position: absolute !important;
+    content: "" !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: inherit !important;
+    transform: translate3d(0, 0.75em, -1em) !important;
+    transition: transform 0.15s, box-shadow 0.15s !important;
+}
+
+ .btn-add-card:hover{
+	background: rgb(41, 38, 185) !important;
+    transform: translate(0, 0.25em) !important;
+}
+
+ .btn-add-card:hover::before{
+	transform: translate3d(0, 0.5em, -1em) !important;
+}
+
+.btn-add-card:active{
+	background: rgb(28, 26, 122) !important;
+    transform: translate(0em, 0.75em) !important;
+}
+
+.btn-drop-card{
+  height: 30px;
+  width: 90px;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(234, 61, 61) !important;
+  box-shadow: 9px 13px 3px rgba(0, 0, 0, 0.25) !important;
+  color: white !important;
+  transition: transform 0.15s !important;
+  transform-style: preserve-3d !important;
+  font-family: 'Neucha', cursive;
+
+
+}
+
+.btn-drop-card ::before {
+position: absolute !important;
+  content: "" !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  border-radius: inherit !important;
+  transform: translate3d(0, 0.75em, -1em) !important;
+  transition: transform 0.15s, box-shadow 0.15s !important;
+}
+
+.btn-drop-card:hover{
+background: rgb(185, 38, 38) !important;
+  transform: translate(0, 0.25em) !important;
+}
+
+.btn-drop-card:hover::before{
+transform: translate3d(0, 0.5em, -1em) !important;
+}
+
+.btn-drop-card:active{
+background: rgb(122, 26, 26) !important;
+  transform: translate(0em, 0.75em) !important;
+}
+
+
