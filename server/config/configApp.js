@@ -1,6 +1,8 @@
 const path = require('path');
 const morgan = require('morgan');
 const express = require('express');
+const cors = require('cors')
+
 
 // Подключаем(рекваирим) модуль на вывод кукис по req.cookies
 const cookieParser = require('cookie-parser');
@@ -24,6 +26,7 @@ module.exports = function configApp(app) {
   app.use(express.json());
   app.use(express.static(path.resolve('public')));
   app.use(cookieParser());
+  app.use(cors())
   // Создаем конфиг (структуру сессии)
   const sessionConfig = {
     store: new FileStore(), // хранение файлов сессии

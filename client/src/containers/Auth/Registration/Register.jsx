@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import './register.css';
+import './Register.css';
 import { authReg } from '../../../store/auth/actionCreator';
 
 function Register() {
@@ -36,10 +36,10 @@ function Register() {
   };
 
   return (
-    
+    <div className="register-container">
     <div className="card">
       <div className="card-image">
-        <h2 className="card-heading">Sign up</h2>
+        <h2 className="card-heading">Регистрация</h2>
       </div>
       <form className="card-form" onSubmit={regHandler}>
         <div className="input">
@@ -74,12 +74,13 @@ function Register() {
         </div>
         <div className="action">
           <button type="submit" className="action-button">
-            Registrations
+            Зарегистрироваться
           </button>
         </div>
       </form>
     </div>
+    </div>
+    
   );
 }
-
 export default Register;

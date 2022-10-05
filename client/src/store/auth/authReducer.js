@@ -1,8 +1,8 @@
-import {AUTH_LOGIN, AUTH_LOGOUT, AUTH_REG, INIT_USER} from "./actionType";
+import {AUTH_LOGIN, AUTH_LOGOUT, AUTH_REG, INIT_USER, CHANGE_NAME, CHANGE_PHOTO, ADD_MONEY} from "./actionType";
 import {BUY_DECK} from "../shop/actionType";
 
 
-const initialState = {user:{}};
+const initialState = { user: {} };
 
 export default function authReducer(state = initialState, action) {
   switch (action.type) {
@@ -20,7 +20,12 @@ export default function authReducer(state = initialState, action) {
     }
     case BUY_DECK:
       return {...state, user: {...state.user,coins:state.user.coins-100}}
-
+    case CHANGE_NAME:
+      return {...state, user: {...state.user,name:action.payload}}
+    case CHANGE_PHOTO:
+      return {...state, user: {...state.user,photo:action.payload}}
+    case ADD_MONEY:
+      return {...state, user: {...state.user,coins:action.payload}}
     default: return state
   }
 }

@@ -1,3 +1,5 @@
+// import React from 'react';
+
 import './StartPage.css';
 import anime from 'animejs/lib/anime.es.js';
 import React,{useEffect} from "react";
@@ -6,8 +8,10 @@ import moon from "./img/moon.png";
 import mountains_behind from "./img/mountains_behind.png";
 import mountains_front from "./img/mountains_front.png";
 import {Link} from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const StartPage = () => {
+    const user = useSelector(state => state.auth.user)
 useEffect(()=>{
     var animation = anime.timeline({
         autoplay:false,
@@ -74,7 +78,11 @@ return (
         <img src={moon} id='moon' alt='moon' />
         <img src={mountains_behind} id='mount_behind' alt='mount_behind' />
         <h2 id='textok'>Welcome to the <span>Card Game</span></h2>
-        <Link to='/main' id="btn">Start</Link>
+        {user?.id ?
+        <Link to='/home' id="btn">Start</Link>
+            :
+            <Link to='/main' id="btn">Start</Link>
+        }
         <img src={mountains_front} id='mount_front' alt='mount_front' />
     </section>
     </div>
