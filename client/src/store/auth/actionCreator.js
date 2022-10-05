@@ -1,4 +1,4 @@
-import {AUTH_LOGIN, AUTH_LOGOUT, AUTH_REG, INIT_USER} from './actionType';
+import {AUTH_LOGIN, AUTH_LOGOUT, AUTH_REG, INIT_USER, CHANGE_PHOTO, CHANGE_NAME} from './actionType';
 
 export function authLogin(payload) {
   return { type: AUTH_LOGIN, payload };
@@ -14,4 +14,12 @@ export function authLogout(payload) {
 
 export function initUser(payload) {
   return {type: INIT_USER, payload}
+}
+
+export function changeName(payload) {
+  return {type: CHANGE_NAME, payload}
+}
+
+export function changePhoto(payload) {
+  return {type: CHANGE_PHOTO, payload}
 }

@@ -1,12 +1,12 @@
 import { BUY_DECK } from "./actionType";
 
 
-const initialState = {user:{}};
 
- export default function buyReducer(state = {user:{}}, action) {
+
+ export default function buyReducer(state = {shop:[]}, action) {
      switch (action.type) {
          case BUY_DECK:
-             return {...state, user: {...state.user,coins:state.user.coins-100}}
+             return {...state, shop: action.payload}
          default:
              return state
      }

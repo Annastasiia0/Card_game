@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { authLogin } from '../../../store/auth/actionCreator';
-import '../Registration/register.css'
+import './Login.css'
 
 function Login() {
 
@@ -32,6 +32,7 @@ function Login() {
   }
 
   return (
+    <div className="login-container">
     <div className="card">
       <div className="card-image">
         <h2 className="card-heading">Sign in</h2>
@@ -63,6 +64,7 @@ function Login() {
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 }

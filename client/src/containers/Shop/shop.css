@@ -1,0 +1,83 @@
+.shop-container {
+    background-image: url('./img/shopPage.jpg') !important;
+    background: no-repeat; 
+    background-size: cover; 
+    min-height: 100%; 
+     background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+}
+
+.button-shop-container {
+    flex-direction: column;
+    background: inherit;
+    /* background-color: black; */
+    border-radius: 10px;
+    margin-top: 50px;
+    height: 160px;
+    width: 380px;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    /* border: 3px solid red; */
+    position: absolute;
+    box-shadow: 14px 30px 23px rgba(0, 0, 0, 0.48);
+}
+
+.button-shop-container:before{
+    position: absolute;
+    content: '';
+    background: inherit;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192);
+    filter: blur(10px);
+    border-radius: 10px;
+}
+
+.button-shop{
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: rgba(65, 61, 234, 1);
+    border-radius: 20px;
+    box-shadow: 9px 13px 3px rgba(0, 0, 0, 0.25);
+    width: 220px;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: transform 0.15s;
+    transform-style: preserve-3d;
+}
+
+.button-shop::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.button-shop:hover {
+    background: rgb(41, 38, 185);
+    transform: translate(0, 0.25em);
+  }
+  .button-shop:hover::before {
+    /* box-shadow: 0 0 0 2px rgb(28, 26, 122), 0 0.5em 0 0 rgb(28, 26, 122) ; */
+    transform: translate3d(0, 0.5em, -1em);
+  }
+  .button-shop:active {
+    background: rgb(28, 26, 122);
+    transform: translate(0em, 0.75em);
+  }
