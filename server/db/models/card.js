@@ -10,12 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({
-      Deck, User, Pack,
+      Deck, User, Pack, card_deck
     }) {
-      Card.hasMany(Deck, { foreignKey: 'card_id' });
-      Card.belongsToMany(User, { through: Deck, foreignKey: 'deck_id', otherKey: 'user_id' });
-      // Card.hasMany(Ability, { foreignKey: 'ability_id' });
-      Card.belongsTo(Pack, { foreignKey: 'card_id' });
+      Card.belongsToMany(User, { through: 'user_card_join_table' });
+      Card.belongsTo(Pack, { foreignKey: 'pack_id' });
+      Card.belongsToMany(Deck,{through:card_deck, foreignKey:'card_id', otherKey:'deck_id'})
     }
   }
   Card.init({
@@ -31,15 +30,15 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     damage: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     health: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     manaCost: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
     },
     ability_id: {
       type: DataTypes.TEXT,
@@ -48,6 +47,14 @@ module.exports = (sequelize, DataTypes) => {
       //   key: 'id',
       // },
     },
+    pack_id:{
+      type:DataTypes.INTEGER,
+      references:{
+        model:'Packs',
+        key:'id'
+      },
+      allowNull:true
+    }
   }, {
     sequelize,
     modelName: 'Card',

@@ -1,0 +1,15 @@
+.Board {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  background: url('https://cdna.artstation.com/p/assets/images/images/028/246/064/large/ben-thompson-hs-board-naxxramas-sketch.jpg?1593902212');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &:first-child {
+    align-self: flex-start;
+  }
+}

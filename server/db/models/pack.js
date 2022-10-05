@@ -11,12 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({ Card, Shop }) {
       // define association here
-      Pack.hasMany(Card, { foreignKey: 'card_id' });
+      Pack.hasMany(Card, { foreignKey: 'pack_id' });
       Pack.belongsTo(Shop, { foreignKey: 'pack_id' });
     }
   }
   Pack.init({
-    card_id: DataTypes.INTEGER,
+    card_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model:'Cards',
+        key:'id',
+      }
+    },
     cost: DataTypes.INTEGER,
   }, {
     sequelize,

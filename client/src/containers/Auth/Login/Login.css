@@ -1,0 +1,11 @@
+.login-container {
+    background-image: url(../Login/img/loginPage.jpg) !important;
+    background: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    background-attachment: fixed;
+}
