@@ -9,12 +9,20 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ UserDeck }) {
+    static associate({ UserDeck, Card }) {
       Deck.belongsTo(UserDeck, { foreignKey: 'deck_id' });
-      // define association here
+      Deck.hasMany(Card, { foreignKey: 'card_id' });
     }
   }
   Deck.init({
+    title: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    active: {
+      allowNull: false,
+      type: DataTypes.BOOLEAN,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -22,7 +30,13 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       },
     },
-    card_id: DataTypes.INTEGER,
+    card_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Cards',
+        key: 'id',
+      },
+    },
   }, {
     sequelize,
     modelName: 'Deck',

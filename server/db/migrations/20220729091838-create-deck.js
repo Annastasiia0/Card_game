@@ -7,6 +7,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      title: {
+        allowNull: false,
+        type: Sequelize.TEXT,
+      },
+      active: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+      },
       user_id: {
         type: Sequelize.INTEGER,
         references: {
