@@ -1,37 +1,42 @@
-import styles from './Shop.module.css';
-import {useEffect, useState} from "react";
+// import styles from '../../components/ShopCard/ShopCard.module.css';
+import'./shop.css'
+import { useState} from "react";
 import React from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import {buyDeck} from "../../store/shop/actionCreator";
-
+import ShopCard from '../../components/ShopCard/ShopCard'
+import {addToDeckFromShop} from "../../store/deck/actionCreators";
 const Shop = () => {
     const [state,setState] = useState(false)
     const dispatch = useDispatch()
-    const user = useSelector((state) => state.auth.user)
+    const shop = useSelector((state) => state.shop.shop)
+    const deck = useSelector((state) => state.deck.deck)
     const buy = async() => {
-        const responce = await fetch('/buycards')
-        // dispatch(buyDeck())
+        const responce = await fetch('/buycards/new')
+        const res = await responce.json()
+        dispatch(buyDeck(res))
         setState(true)
     }
 
+    const addToDeck = async () => {
+        setState(true)
+        const responce = await fetch('/buycards')
+        const res = await responce.json()
+        console.log(res)
+        res.forEach(el=>{
+            dispatch(addToDeckFromShop(el))})
+        console.log(deck)
+        setState(false)
+    }
+
+
     return (
         <>
-            <section>
-                <button onClick={buy}>Купить пак</button>
-                {state ?
-                    <div className={styles.Card}>
-                        <div
-                            className={styles.CardPortrait}
-                            style={{ backgroundImage: `url(https://d15f34w2p8l1cc.cloudfront.net/hearthstone/804e1f61cbc0fbee886e5a43ddb1b592980166ce41e4bec6e4a956fd72ef83a3.png)` }}
-                        />
-                        <div className={styles.CardMana}>{ 5 || 0 }</div>
-                        <h1 className={styles.CardName}>Jora </h1>
-                        {  <div className={styles.CardAttack}>{ 10 }</div> }
-                        { <div className={styles.CardDefense}>{ 10 }</div> }
-                    </div>  : <div/>
-              }
-                <button onClick={buy}></button>
-
+            <section className='shop-container'>
+                <div className='button-shop-container'>
+                <button className='button-shop' onClick={buy}>Купить пак</button></div>
+                {state ? shop.map(el=><ShopCard key={el.id} name={el.name} imageString={el.imageString} info={el.info} attack={el.attack} health={el.health} mana={el.mana}/>) : <div/>}
+                {state ? <button onClick={addToDeck}>Добавить в колоду</button> : <div/> }
             </section>
         </>
     )

@@ -10,43 +10,37 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({
-      Deck, User, Pack,
+      Deck, User, card_deck
     }) {
-      Card.hasMany(Deck, { foreignKey: 'card_id' });
-      Card.belongsToMany(User, { through: Deck, foreignKey: 'deck_id', otherKey: 'user_id' });
-      // Card.hasMany(Ability, { foreignKey: 'ability_id' });
-      Card.belongsTo(Pack, { foreignKey: 'card_id' });
+      Card.belongsToMany(User, { through: 'user_card_join_table' });
+      Card.belongsToMany(Deck,{through:card_deck, foreignKey:'card_id', otherKey:'deck_id'})
     }
   }
   Card.init({
+    attack: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    health: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    mana: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    info: {
+      type: DataTypes.TEXT,
+    },
+    imageString: {
+      type: DataTypes.TEXT,
+    },
     name: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    photo_url: {
+    rarity: {
       type: DataTypes.TEXT,
-    },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    damage: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-    },
-    health: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-    },
-    manaCost: {
-      type: DataTypes.BIGINT,
-    },
-    ability_id: {
-      type: DataTypes.TEXT,
-      // references: {
-      //   model: 'Abilities',
-      //   key: 'id',
-      // },
     },
   }, {
     sequelize,

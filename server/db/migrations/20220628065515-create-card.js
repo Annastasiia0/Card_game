@@ -7,34 +7,30 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      attack: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      health: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      mana: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      info: {
+        type: Sequelize.TEXT,
+      },
+      imageString: {
+        type: Sequelize.TEXT,
+      },
       name: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      photo_url: {
+      rarity: {
         type: Sequelize.TEXT,
-      },
-      description: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      damage: {
-        type: Sequelize.BIGINT,
-        allowNull: false,
-      },
-      health: {
-        type: Sequelize.BIGINT,
-        allowNull: false,
-      },
-      manaCost: {
-        type: Sequelize.BIGINT,
-      },
-      ability_id: {
-        type: Sequelize.TEXT,
-        // references: {
-        //   model: 'Abilities',
-        //   key: 'id',
-        // },
       },
       createdAt: {
         allowNull: false,
